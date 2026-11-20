@@ -43,13 +43,13 @@ def test_detect_platform_anthropic(monkeypatch, tmp_path):
     _clear(monkeypatch, tmp_path)
     monkeypatch.setenv("ANTHROPIC_AUTH_TOKEN", "token-123")
     monkeypatch.setenv("ANTHROPIC_BASE_URL", "https://api.deepseek.com/anthropic")
-    monkeypatch.setenv("ANTHROPIC_MODEL", "deepseek-flash[1M]")
+    monkeypatch.setenv("ANTHROPIC_MODEL", "deepseek-flash")
 
     config = detect_platform_config()
 
     assert config is not None
     assert config.provider == "anthropic"
-    assert config.model == "deepseek-flash[1M]"
+    assert config.model == "deepseek-flash"
     assert config.api_key == "token-123"
     assert config.source == "platform"
 
@@ -77,8 +77,8 @@ def test_detect_deepseek_only(monkeypatch, tmp_path):
 
     assert config is not None
     assert config.provider == "deepseek"
-    assert config.model == "deepseek-chat"
-    assert config.base_url == "https://api.deepseek.com/v1"
+    assert config.model == "deepseek-flash"
+    assert config.base_url == "https://api.deepseek.com"
     assert config.api_key == "deepseek-token"
 
 
@@ -99,9 +99,9 @@ def test_build_deepseek_chat_model():
     model = build_chat_model(
         LLMConfig(
             provider="deepseek",
-            model="deepseek-chat",
+            model="deepseek-flash",
             api_key="test-token",
-            base_url="https://api.deepseek.com/v1",
+            base_url="https://api.deepseek.com",
         )
     )
     assert model.__class__.__name__ == "ChatOpenAI"
@@ -132,13 +132,13 @@ def test_llm_config_uses_platform_anthropic(monkeypatch, tmp_path):
     _clear(monkeypatch, tmp_path)
     monkeypatch.setenv("ANTHROPIC_AUTH_TOKEN", "token-123")
     monkeypatch.setenv("ANTHROPIC_BASE_URL", "https://api.deepseek.com/anthropic")
-    monkeypatch.setenv("ANTHROPIC_MODEL", "deepseek-flash[1M]")
+    monkeypatch.setenv("ANTHROPIC_MODEL", "deepseek-flash")
 
     config = LLMConfig.from_env(tmp_path / "missing.env")
 
     assert config.provider == "anthropic"
     assert config.enabled is True
-    assert config.model == "deepseek-flash[1M]"
+    assert config.model == "deepseek-flash"
 
 
 def test_no_ai_choice_is_persisted_and_blocks_platform_detection(
@@ -191,7 +191,7 @@ def test_build_anthropic_chat_model():
     model = build_chat_model(
         LLMConfig(
             provider="anthropic",
-            model="deepseek-flash[1M]",
+            model="deepseek-flash",
             api_key="test-token",
             base_url="https://api.deepseek.com/anthropic",
         )

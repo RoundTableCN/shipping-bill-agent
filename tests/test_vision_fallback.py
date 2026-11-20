@@ -145,8 +145,8 @@ def test_saved_api_without_ocr_url_uses_vision_fallback(
     save_ai_config(
         AIConfig(
             provider="deepseek",
-            model="deepseek-chat",
-            base_url="https://api.deepseek.com/v1",
+            model="deepseek-flash",
+            base_url="https://api.deepseek.com",
             api_key="test-key",
             source="custom",
         )

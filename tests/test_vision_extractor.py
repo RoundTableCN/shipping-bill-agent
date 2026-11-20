@@ -38,8 +38,8 @@ def test_saved_openai_compatible_config_enables_fallback(monkeypatch, tmp_path):
     save_ai_config(
         AIConfig(
             provider="deepseek",
-            model="deepseek-chat",
-            base_url="https://api.deepseek.com/v1",
+            model="deepseek-flash",
+            base_url="https://api.deepseek.com",
             api_key="test-key",
             source="custom",
         )
@@ -49,7 +49,7 @@ def test_saved_openai_compatible_config_enables_fallback(monkeypatch, tmp_path):
 
     assert config.enabled is True
     assert config.protocol == "openai"
-    assert config.endpoint() == "https://api.deepseek.com/v1/chat/completions"
+    assert config.endpoint() == "https://api.deepseek.com/chat/completions"
 
 
 def test_saved_anthropic_config_uses_anthropic_protocol(monkeypatch, tmp_path):

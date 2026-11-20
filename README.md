@@ -53,7 +53,7 @@
 | EML/PDF/Excel/Word 解析 | 是 | 单元测试 + fixtures | 真实复杂版式/扫描件 |
 | OCR API | 是 | **OSS 图片型 PDF：200 / 11.96s，`chargeList` 2 条；真实 OCR→Agent 产出 2 条 PENDING_REVIEW**；直接 PNG 200 但空；文字型 PDF1/PDF2 200 但空 | 真实 currency/payer 字段（OCR 未返回） |
 | LangChain / AI API | 是 | 平台 Anthropic 兼容 API 真实调用成功；`formal_invoice.pdf` 3 条 NO_CHANGE；首次运行可配置 | 其他自定义 provider 的真实调用 |
-| 视觉模型对比 | 是 | DeepSeek `deepseek-flash[1M]` 真实调用；3 份样本 23/24 字段 | 更多真实账单/版式 |
+| 视觉模型对比 | 是 | 历史测试使用平台标识 `deepseek-flash[1M]`；3 份样本 23/24 字段 | 更多真实账单/版式 |
 | 匹配 / AR/AP / operation | 是 | synthetic golden + 边界集 | 真实历史账单数据 |
 | Golden / 评测 | 是 | 9 个 golden、22 条记录、字段级指标；复核率 59% 为预期保守复核 | 真实/脱敏人工标注集；详见 [EVALUATION_NOTES.md](docs/EVALUATION_NOTES.md) |
 | `.doc` | 是（LibreOffice 或内置 OLE 文本解析） | LibreOffice 转换优先；无 LibreOffice 时用 Word 97 piece table 提取文本/表格行 | 复杂 Word 表格结构仍需人工复核 |
@@ -168,7 +168,7 @@ python scripts/verify_fixtures.py
 ```text
 provider=deepseek
   → LLMConfig(provider="deepseek", ...)
-  → langchain_openai.ChatOpenAI(base_url="https://api.deepseek.com/v1")
+  → langchain_openai.ChatOpenAI(base_url="https://api.deepseek.com")
   → ChatPromptTemplate
   → with_structured_output(...)
   → LangChainExtractor
@@ -180,8 +180,8 @@ provider=deepseek
 
 ```text
 provider = deepseek
-model    = deepseek-chat
-base_url = https://api.deepseek.com/v1
+model    = deepseek-flash
+base_url = https://api.deepseek.com
 ```
 
 `deepseek-reasoner` 对 function calling / 结构化输出的支持可能有限，不建议作为默认抽取模型。
@@ -213,6 +213,8 @@ source=llm
 
 选择结果会保存，后续启动不再询问。选择“不使用大模型”后，后续只运行规则抽取，不调用任何 AI API。
 
+已有本机配置优先于代码默认值。如果以前保存过 `deepseek-chat`，请在侧边栏修改模型为 `deepseek-flash`，或运行 `python scripts/configure_ai.py --use-platform` 更新为当前平台配置。
+
 ```bash
 # 查看当前配置和平台检测结果
 python scripts/configure_ai.py --show
@@ -225,8 +227,8 @@ python scripts/configure_ai.py --no-ai
 
 # 指定 DeepSeek
 python scripts/configure_ai.py --provider deepseek \
-  --model deepseek-chat \
-  --base-url https://api.deepseek.com/v1 \
+  --model deepseek-flash \
+  --base-url https://api.deepseek.com \
   --api-key sk-你的key
 
 # 指定 OpenAI
@@ -245,7 +247,7 @@ python scripts/configure_ai.py --provider anthropic \
 Streamlit 的 Provider 选项：
 
 ```text
-deepseek  → deepseek-chat / https://api.deepseek.com/v1
+deepseek  → deepseek-flash / https://api.deepseek.com
 openai    → gpt-4o-mini / https://api.openai.com/v1
 anthropic → claude-sonnet-5-5 / https://api.anthropic.com
 ```
@@ -253,7 +255,7 @@ anthropic → claude-sonnet-5-5 / https://api.anthropic.com
 - 配置文件保存在用户目录（`~/.shipping_agent/ai_config.json`，权限 0600），**不写入项目、不进入 zip**；
 - `AI_CONFIG_PATH` 可覆盖路径；`python scripts/configure_ai.py --clear` 清除；
 - 无交互终端下不会阻塞：未配置时直接使用规则抽取；
-- 平台默认在当前环境为 `anthropic` / `deepseek-flash[1M]` / `https://api.deepseek.com/anthropic`，已真实跑通 LangChain 结构化抽取。
+- 平台默认在测试环境为 `anthropic` / `deepseek-flash[1M]` / `https://api.deepseek.com/anthropic`，已真实跑通 LangChain 结构化抽取；这是历史实测记录。
 
 启用方式：
 
@@ -318,7 +320,7 @@ VISION_FALLBACK=1
 # 可选：显式视觉模型。协议默认从 base_url 推断；
 # Anthropic 兼容用 /v1/messages，OpenAI 兼容用 /chat/completions。
 # VISION_BASE_URL=https://api.deepseek.com/anthropic
-# VISION_MODEL=deepseek-flash[1M]
+# VISION_MODEL=deepseek-flash
 # VISION_API_KEY=
 # VISION_PROTOCOL=anthropic
 #
@@ -442,7 +444,7 @@ docs/                    # 方案、决策、追溯矩阵、OCR 能力
 ## 当前限制
 
 - LangChain 抽取已用平台 Anthropic 兼容 API 真实跑通；也支持自定义 OpenAI/Anthropic API。默认仍使用规则抽取，除非勾选 `--use-llm`。
-- 视觉兜底已用平台 `deepseek-flash[1M]`（Anthropic 兼容）和首次运行保存的 DeepSeek `deepseek-chat`（OpenAI 兼容）真实跑通；它走 HTTP 视觉接口，不是 LangChain 抽取入口。结果强制 `PENDING_REVIEW`。
+- 视觉兜底历史实测使用平台标识 `deepseek-flash[1M]`（Anthropic 兼容）和旧标识 `deepseek-chat`（OpenAI 兼容）；当前默认模型标识为 `deepseek-flash`。它走 HTTP 视觉接口，不是 LangChain 抽取入口。结果强制 `PENDING_REVIEW`。
 - OCR 真实探针已执行：图片型 PDF `sample_carrier.pdf` 成功；文字型 PDF1/PDF2 和直接 PNG 返回 `data.list=[]`；图片需要先转单页 PDF。
 - `.doc` 解析优先用 LibreOffice；没有 LibreOffice 时使用内置 Word 97 OLE/piece-table 文本解析。Word COM 仅在 `DOC_WORD_COM=1` 时启用（部分环境会弹窗阻塞）。
 - `data/fixtures/` 为合成测试数据，不是真实业务单据。
@@ -466,5 +468,3 @@ docs/                    # 方案、决策、追溯矩阵、OCR 能力
 
 - 交付包：`dist/shipping-bill-agent.zip`
 - 一键验证：`powershell -File run_demo.ps1`（或按 Quick Start 逐条执行）
-- 提交邮箱：`LUKA@PLTPLT.COM`、`pan@pltplt.com`
-- 邮件标题：`应聘渠道+姓名+应聘岗位`

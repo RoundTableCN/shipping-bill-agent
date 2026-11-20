@@ -65,18 +65,18 @@ def test_llm_config_loads_dotenv(monkeypatch, tmp_path):
     monkeypatch.setenv("AI_CONFIG_PATH", str(tmp_path / "missing-ai.json"))
     env = tmp_path / ".env"
     env.write_text(
-        "LLM_MODEL=deepseek-chat\n"
+        "LLM_MODEL=deepseek-flash\n"
         "OPENAI_API_KEY=sk-test\n"
-        "OPENAI_BASE_URL=https://api.deepseek.com/v1\n"
+        "OPENAI_BASE_URL=https://api.deepseek.com\n"
         "LLM_STRUCTURED_METHOD=function_calling\n",
         encoding="utf-8",
     )
 
     config = LLMConfig.from_env(env)
 
-    assert config.model == "deepseek-chat"
+    assert config.model == "deepseek-flash"
     assert config.api_key == "sk-test"
-    assert config.base_url == "https://api.deepseek.com/v1"
+    assert config.base_url == "https://api.deepseek.com"
     assert config.structured_method == "function_calling"
     assert config.enabled is True
 

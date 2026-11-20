@@ -165,7 +165,7 @@ class VisionConfig:
             model = (
                 explicit_model
                 or _first_env("ANTHROPIC_MODEL")
-                or "deepseek-flash[1M]"
+                or "deepseek-flash"
             )
             key = explicit_key or _first_env(
                 "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_API_KEY", "OPENAI_API_KEY"
@@ -192,7 +192,7 @@ class VisionConfig:
                 base_url=(
                     platform_base or "https://api.deepseek.com/anthropic"
                 ).rstrip("/"),
-                model=platform_model or "deepseek-flash[1M]",
+                model=platform_model or "deepseek-flash",
                 api_key=platform_key,
                 protocol="anthropic",
             )
@@ -218,10 +218,10 @@ class VisionConfig:
                 default_base = (
                     "https://api.openai.com/v1"
                     if ai.provider == "openai"
-                    else "https://api.deepseek.com/v1"
+                    else "https://api.deepseek.com"
                 )
                 default_model = (
-                    "gpt-4o-mini" if ai.provider == "openai" else "deepseek-chat"
+                    "gpt-4o-mini" if ai.provider == "openai" else "deepseek-flash"
                 )
                 return cls(
                     base_url=(ai.base_url or default_base).rstrip("/"),
@@ -233,7 +233,7 @@ class VisionConfig:
         base = platform_base or "https://api.deepseek.com/anthropic"
         return cls(
             base_url=base.rstrip("/"),
-            model=platform_model or "deepseek-flash[1M]",
+            model=platform_model or "deepseek-flash",
             api_key="",
             protocol=explicit_protocol
             if explicit_protocol in {"anthropic", "openai"}

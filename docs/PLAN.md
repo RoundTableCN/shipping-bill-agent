@@ -176,8 +176,6 @@
 | ACC-09 | 写出 5 点以上自己的思考 |
 | ACC-10 | 基于 Python 和 LangChain 代码实现 |
 | DLV-01 | 打包 zip 或提供 Git 仓库链接 |
-| DLV-02 | 发送至 LUKA@PLTPLT.COM 及 pan@pltplt.com |
-| DLV-03 | 邮件标题：应聘渠道+姓名+应聘岗位 |
 
 > 原文「七、处理要求」编号为 1–6、8、10，确实缺少第 7、9 条，不是提取遗漏。
 
@@ -1741,9 +1739,7 @@ python scripts/run_samples.py --offline --ocr-mode mock
 
 ### 14.2 提交方式
 
-- 收件人：`LUKA@PLTPLT.COM`、`pan@pltplt.com`
-- 邮件标题：`应聘渠道+姓名+应聘岗位`
-- 正文建议包含：仓库链接或附件、运行方式、样本运行结果摘要、已知限制
+- 按题目平台要求提交 GitHub 仓库链接或交付包。
 
 ### 14.3 README 必写内容
 
@@ -1832,8 +1828,6 @@ python scripts/run_samples.py --offline --ocr-mode mock
 | ACC-09 | 5 点以上自己的思考 | `docs/DECISIONS.md`（业务 6 点 + 技术 7 点） | **已交付（13 点）** |
 | ACC-10 | Python + LangChain 代码 | P0/P1 代码已实现；LangChain 入口可构建 | 已实现入口（未真调模型） |
 | DLV-01 | zip 或 Git | `dist/shipping-bill-agent.zip` | **已生成** |
-| DLV-02 | 发送至两个邮箱 | 邮件记录 | 待发送（需本人操作） |
-| DLV-03 | 邮件标题格式 | 应聘渠道+姓名+应聘岗位 | 待发送（需本人操作） |
 
 ### 17.1 逐字对齐检查
 

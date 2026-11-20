@@ -63,10 +63,10 @@ PROVIDER_OPTIONS = ("deepseek", "openai", "anthropic")
 
 def _provider_defaults(provider: str) -> tuple[str, str]:
     return {
-        "deepseek": ("deepseek-chat", "https://api.deepseek.com/v1"),
+        "deepseek": ("deepseek-flash", "https://api.deepseek.com"),
         "openai": ("gpt-4o-mini", "https://api.openai.com/v1"),
         "anthropic": ("claude-sonnet-5-5", "https://api.anthropic.com"),
-    }.get(provider, ("deepseek-chat", "https://api.deepseek.com/v1"))
+    }.get(provider, ("deepseek-flash", "https://api.deepseek.com"))
 
 
 def _vision_fallback_status() -> tuple[bool, str, str]:
@@ -213,7 +213,7 @@ def _first_run_gate() -> bool:
             "Provider",
             PROVIDER_OPTIONS,
             help=(
-                "deepseek: deepseek-chat / https://api.deepseek.com/v1\n"
+                "deepseek: deepseek-flash / https://api.deepseek.com\n"
                 "openai: gpt-4o-mini / https://api.openai.com/v1\n"
                 "anthropic: claude-sonnet-5-5 / https://api.anthropic.com"
             ),

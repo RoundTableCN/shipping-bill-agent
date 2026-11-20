@@ -84,18 +84,18 @@ def detect_platform_config() -> AIConfig | None:
             key = _first_env("LLM_API_KEY", "DEEPSEEK_API_KEY", "OPENAI_API_KEY")
             base = _first_env(
                 "LLM_BASE_URL", "DEEPSEEK_BASE_URL", "OPENAI_BASE_URL",
-                default="https://api.deepseek.com/v1",
+                default="https://api.deepseek.com",
             )
             model = _first_env(
-                "LLM_MODEL", "DEEPSEEK_MODEL", "OPENAI_MODEL", default="deepseek-chat"
+                "LLM_MODEL", "DEEPSEEK_MODEL", "OPENAI_MODEL", default="deepseek-flash"
             )
         else:
             key = _first_env("LLM_API_KEY", "OPENAI_API_KEY", "DEEPSEEK_API_KEY")
             base = _first_env(
                 "LLM_BASE_URL", "OPENAI_BASE_URL", "DEEPSEEK_BASE_URL",
-                default="https://api.deepseek.com/v1",
+                default="https://api.deepseek.com",
             )
-            model = _first_env("LLM_MODEL", "OPENAI_MODEL", "DEEPSEEK_MODEL", default="deepseek-chat")
+            model = _first_env("LLM_MODEL", "OPENAI_MODEL", "DEEPSEEK_MODEL", default="deepseek-flash")
         if key:
             return AIConfig(explicit_provider, model, base, key, source="platform")
 
@@ -118,10 +118,10 @@ def detect_platform_config() -> AIConfig | None:
     if deepseek_key:
         return AIConfig(
             provider="deepseek",
-            model=_first_env("LLM_MODEL", "DEEPSEEK_MODEL", default="deepseek-chat"),
+            model=_first_env("LLM_MODEL", "DEEPSEEK_MODEL", default="deepseek-flash"),
             base_url=_first_env(
                 "DEEPSEEK_BASE_URL",
-                default="https://api.deepseek.com/v1",
+                default="https://api.deepseek.com",
             ),
             api_key=deepseek_key,
             source="platform",
@@ -142,8 +142,8 @@ def detect_platform_config() -> AIConfig | None:
     if generic_key:
         return AIConfig(
             provider="openai",
-            model=_first_env("LLM_MODEL", default="deepseek-chat"),
-            base_url=_first_env("LLM_BASE_URL", default="https://api.deepseek.com/v1"),
+            model=_first_env("LLM_MODEL", default="deepseek-flash"),
+            base_url=_first_env("LLM_BASE_URL", default="https://api.deepseek.com"),
             api_key=generic_key,
             source="custom",
         )
