@@ -1,0 +1,2030 @@
+{
+  "$defs": {
+    "AuditTrail": {
+      "additionalProperties": false,
+      "description": "Full audit trail. Every field is explicit; no ``extra='allow'``.",
+      "properties": {
+        "ai_reasoning": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ai Reasoning",
+          "type": "array"
+        },
+        "document_class": {
+          "anyOf": [
+            {
+              "enum": [
+                "billing",
+                "notice",
+                "reference",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Class"
+        },
+        "billing_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "confirmed",
+                "tentative",
+                "informational",
+                "void",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Status"
+        },
+        "billing_status_evidence": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Billing Status Evidence"
+        },
+        "original_charge_item": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Charge Item"
+        },
+        "line_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Id"
+        },
+        "source_position_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Position Id"
+        },
+        "content_fingerprint": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Fingerprint"
+        },
+        "historical_line_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Historical Line Id"
+        },
+        "charge_breakdown": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChargeBreakdown"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "candidate_amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Amount"
+        },
+        "document_totals": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DocumentTotals"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "letterhead_party": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Letterhead Party"
+        },
+        "issuer_candidate": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer Candidate"
+        },
+        "issuer_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "confirmed",
+                "candidate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer Status"
+        },
+        "recipient_candidate": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recipient Candidate"
+        },
+        "recipient_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "confirmed",
+                "candidate",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recipient Status"
+        },
+        "payer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payer"
+        },
+        "payee": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payee"
+        },
+        "beneficiary": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beneficiary"
+        },
+        "charge_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "to_us",
+                "by_us",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Direction"
+        },
+        "candidate_posting_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "AR",
+                "AP"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Posting Type"
+        },
+        "accounting_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "to_us",
+                "by_us",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Direction"
+        },
+        "candidate_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "to_us",
+                "by_us",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Direction"
+        },
+        "accounting_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "CONFIRMED",
+                "PENDING_CONFIRMATION"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Status"
+        },
+        "collection_right": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collection Right"
+        },
+        "payment_obligation": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Obligation"
+        },
+        "document_identity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DocumentIdentityAudit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "charge_values": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ChargeValuesAudit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "status": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/StatusAudit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceTrace"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "raw_text_excerpt": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Text Excerpt"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "extraction_confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extraction Confidence"
+        },
+        "document_confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Confidence"
+        },
+        "arap_confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Arap Confidence"
+        },
+        "decision_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "AUTO",
+                "REVIEW",
+                "REJECT"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decision Status"
+        },
+        "validation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ValidationReport"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "matched_bill_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Matched Bill Id"
+        },
+        "match_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Match Rule"
+        },
+        "match_candidates": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/MatchCandidate"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Match Candidates"
+        },
+        "strict_attempts": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/MatchAttempt"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Strict Attempts"
+        },
+        "enhanced_attempts": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/MatchAttempt"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Enhanced Attempts"
+        },
+        "changes": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Changes"
+        },
+        "inherited_fields": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Inherited Fields"
+        },
+        "amount_changed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount Changed"
+        },
+        "document_operation_summary": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "type": "integer"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Operation Summary"
+        },
+        "history_checked": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "History Checked"
+        },
+        "ocr_mode": {
+          "anyOf": [
+            {
+              "enum": [
+                "api",
+                "degraded_local",
+                "mock",
+                "vision",
+                "not_applicable"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ocr Mode"
+        }
+      },
+      "required": [
+        "ai_reasoning"
+      ],
+      "title": "AuditTrail",
+      "type": "object"
+    },
+    "BusinessInstruction": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "HOLD",
+            "TELEX_RELEASE",
+            "RELEASE",
+            "OTHER"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Status"
+        }
+      },
+      "required": [
+        "kind",
+        "raw"
+      ],
+      "title": "BusinessInstruction",
+      "type": "object"
+    },
+    "ChargeBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "quantity": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quantity"
+        },
+        "unit_price": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit Price"
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rate"
+        }
+      },
+      "title": "ChargeBreakdown",
+      "type": "object"
+    },
+    "ChargeDetails": {
+      "additionalProperties": false,
+      "properties": {
+        "charge_item": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Item"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "payment_term": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Term"
+        }
+      },
+      "title": "ChargeDetails",
+      "type": "object"
+    },
+    "ChargeValuesAudit": {
+      "additionalProperties": false,
+      "properties": {
+        "charge_code_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Code Raw"
+        },
+        "charge_name_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Name Raw"
+        },
+        "original_charge_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Original Charge Name"
+        },
+        "standard_charge_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Standard Charge Name"
+        },
+        "candidate_standard_charge_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Standard Charge Name"
+        },
+        "mapping_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "MATCHED",
+                "CANDIDATE",
+                "UNMATCHED",
+                "PENDING_CONFIRMATION"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mapping Status"
+        },
+        "quantity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoneyValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoneyValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoneyValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "roe": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoneyValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "base": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Base"
+        },
+        "base_review_required": {
+          "default": false,
+          "title": "Base Review Required",
+          "type": "boolean"
+        },
+        "settlement_amount": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoneyValue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "settlement_currency": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Settlement Currency"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "currency_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "DOCUMENT_TEXT",
+                "INFERRED_FROM_DOLLAR_SYMBOL",
+                "DOCUMENT_DEFAULT",
+                "MISSING",
+                "LLM"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency Source"
+        },
+        "payment_term": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "payment_due_instruction": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Due Instruction"
+        },
+        "payment_due_date": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Due Date"
+        },
+        "prepaid_collect_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prepaid Collect Raw"
+        },
+        "prepaid_collect_normalized": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prepaid Collect Normalized"
+        },
+        "prepaid_collect_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "CONFIRMED",
+                "PENDING_CONFIRMATION",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prepaid Collect Status"
+        },
+        "payer_code_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payer Code Raw"
+        },
+        "payee_code_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payee Code Raw"
+        },
+        "party_mapping_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Party Mapping Status"
+        },
+        "charge_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Type"
+        }
+      },
+      "title": "ChargeValuesAudit",
+      "type": "object"
+    },
+    "DateCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "iso": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Iso"
+        },
+        "source": {
+          "enum": [
+            "EMAIL_HEADER",
+            "LABELED",
+            "GENERIC"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "selected": {
+          "default": false,
+          "title": "Selected",
+          "type": "boolean"
+        },
+        "status": {
+          "default": "UNKNOWN",
+          "enum": [
+            "CONFIRMED",
+            "AMBIGUOUS",
+            "UNKNOWN"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "candidates": {
+          "items": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "title": "Candidates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "title": "DateCandidate",
+      "type": "object"
+    },
+    "DocumentIdentityAudit": {
+      "additionalProperties": false,
+      "properties": {
+        "document_number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "invoice_number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reference_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "bl_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "mbl_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "hbl_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "waybill_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "booking_no": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/RawNormalized"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "container_nos": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Container Nos",
+          "type": "array"
+        },
+        "container_sources": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Container Sources",
+          "type": "object"
+        },
+        "seal_nos": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Seal Nos",
+          "type": "array"
+        },
+        "date_candidates": {
+          "items": {
+            "$ref": "#/$defs/DateCandidate"
+          },
+          "title": "Date Candidates",
+          "type": "array"
+        },
+        "document_date_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date Raw"
+        },
+        "document_date_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "CONFIRMED",
+                "AMBIGUOUS",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date Status"
+        }
+      },
+      "title": "DocumentIdentityAudit",
+      "type": "object"
+    },
+    "DocumentInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "document_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Type"
+        },
+        "reference_no": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference No"
+        },
+        "document_date": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date"
+        }
+      },
+      "title": "DocumentInfo",
+      "type": "object"
+    },
+    "DocumentTotals": {
+      "additionalProperties": false,
+      "properties": {
+        "subtotal": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subtotal"
+        },
+        "tax": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tax"
+        },
+        "total": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total"
+        }
+      },
+      "title": "DocumentTotals",
+      "type": "object"
+    },
+    "FinancialAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "accounting_entity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Entity"
+        },
+        "posting_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "AR",
+                "AP"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Posting Type"
+        }
+      },
+      "title": "FinancialAttributes",
+      "type": "object"
+    },
+    "MatchAttempt": {
+      "additionalProperties": false,
+      "properties": {
+        "rule": {
+          "title": "Rule",
+          "type": "string"
+        },
+        "matched": {
+          "default": false,
+          "title": "Matched",
+          "type": "boolean"
+        },
+        "candidate_count": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Candidate Count",
+          "type": "integer"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "rule"
+      ],
+      "title": "MatchAttempt",
+      "type": "object"
+    },
+    "MatchCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "bill_id": {
+          "title": "Bill Id",
+          "type": "string"
+        },
+        "line_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line Id"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        }
+      },
+      "required": [
+        "bill_id"
+      ],
+      "title": "MatchCandidate",
+      "type": "object"
+    },
+    "MoneyValue": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "normalized": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized"
+        }
+      },
+      "title": "MoneyValue",
+      "type": "object"
+    },
+    "OutputRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "CREATE",
+            "UPDATE",
+            "NO_CHANGE",
+            "PENDING_REVIEW"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "document_info": {
+          "$ref": "#/$defs/DocumentInfo"
+        },
+        "transaction_party": {
+          "$ref": "#/$defs/TransactionParty"
+        },
+        "charge_details": {
+          "$ref": "#/$defs/ChargeDetails"
+        },
+        "financial_attributes": {
+          "$ref": "#/$defs/FinancialAttributes"
+        },
+        "audit_trail": {
+          "$ref": "#/$defs/AuditTrail"
+        }
+      },
+      "required": [
+        "operation",
+        "document_info",
+        "transaction_party",
+        "charge_details",
+        "financial_attributes",
+        "audit_trail"
+      ],
+      "title": "OutputRecord",
+      "type": "object"
+    },
+    "RawNormalized": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "normalized": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized"
+        }
+      },
+      "title": "RawNormalized",
+      "type": "object"
+    },
+    "SourceTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "file_id": {
+          "title": "File Id",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        },
+        "field_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field Path"
+        }
+      },
+      "required": [
+        "file",
+        "file_id"
+      ],
+      "title": "SourceTrace",
+      "type": "object"
+    },
+    "StatusAudit": {
+      "additionalProperties": false,
+      "properties": {
+        "operation_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "PROVISIONAL",
+                "CONFIRMED",
+                "REJECTED"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Status"
+        },
+        "candidate_posting_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "AR",
+                "AP"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Posting Type"
+        },
+        "accounting_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "to_us",
+                "by_us",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Direction"
+        },
+        "candidate_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "to_us",
+                "by_us",
+                "ambiguous"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Direction"
+        },
+        "accounting_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "CONFIRMED",
+                "PENDING_CONFIRMATION"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Status"
+        },
+        "payment_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "PAID",
+                "UNPAID",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Status"
+        },
+        "payment_received": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Received"
+        },
+        "payment_status_scope": {
+          "anyOf": [
+            {
+              "enum": [
+                "CUSTOMER_RECEIVABLE",
+                "VENDOR_PAYABLE",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Status Scope"
+        },
+        "release_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "TELEX_RELEASE",
+                "ORIGINAL_BILL_OF_LADING",
+                "SEA_WAYBILL",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Release Type"
+        },
+        "release_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "HOLD",
+                "RELEASED",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Release Status"
+        },
+        "shipment_operation_status": {
+          "anyOf": [
+            {
+              "enum": [
+                "HOLD",
+                "IN_TRANSIT",
+                "ARRIVED",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shipment Operation Status"
+        },
+        "business_instructions": {
+          "items": {
+            "$ref": "#/$defs/BusinessInstruction"
+          },
+          "title": "Business Instructions",
+          "type": "array"
+        }
+      },
+      "title": "StatusAudit",
+      "type": "object"
+    },
+    "TransactionParty": {
+      "additionalProperties": false,
+      "properties": {
+        "issuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer"
+        },
+        "recipient": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recipient"
+        }
+      },
+      "title": "TransactionParty",
+      "type": "object"
+    },
+    "ValidationReport": {
+      "additionalProperties": false,
+      "properties": {
+        "passed": {
+          "default": false,
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "errors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Errors",
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "title": "ValidationReport",
+      "type": "object"
+    }
+  },
+  "description": "The full output is a JSON array of records.",
+  "items": {
+    "$ref": "#/$defs/OutputRecord"
+  },
+  "title": "FullOutputDocument",
+  "type": "array"
+}

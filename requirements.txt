@@ -1,0 +1,23 @@
+pydantic>=2.7,<3
+simplejson>=3.19
+jsonschema>=4.20
+python-docx>=1.1
+olefile>=0.47
+openpyxl>=3.1
+xlrd>=2.0
+beautifulsoup4>=4.12
+PyYAML>=6.0
+python-dotenv>=1.0
+PyMuPDF>=1.24
+Pillow>=10.0
+requests>=2.31
+pytest>=8
+
+# LLM layer (P1+)
+langchain>=0.3
+langchain-openai>=0.2
+langchain-anthropic>=1.7
+langgraph>=0.2
+
+# UI (P4)
+streamlit>=1.35

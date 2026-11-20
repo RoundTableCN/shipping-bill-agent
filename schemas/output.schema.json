@@ -1,0 +1,234 @@
+{
+  "$defs": {
+    "ChargeDetails": {
+      "additionalProperties": false,
+      "properties": {
+        "charge_item": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Charge Item"
+        },
+        "amount": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Amount"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Currency"
+        },
+        "payment_term": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Payment Term"
+        }
+      },
+      "title": "ChargeDetails",
+      "type": "object"
+    },
+    "DocumentInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "document_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Type"
+        },
+        "reference_no": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reference No"
+        },
+        "document_date": {
+          "anyOf": [
+            {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Document Date"
+        }
+      },
+      "title": "DocumentInfo",
+      "type": "object"
+    },
+    "FinancialAttributes": {
+      "additionalProperties": false,
+      "properties": {
+        "accounting_entity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Accounting Entity"
+        },
+        "posting_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "AR",
+                "AP"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Posting Type"
+        }
+      },
+      "title": "FinancialAttributes",
+      "type": "object"
+    },
+    "StrictAuditTrail": {
+      "additionalProperties": false,
+      "description": "Strict mode keeps only the key required by the exam example.",
+      "properties": {
+        "ai_reasoning": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ai Reasoning",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ai_reasoning"
+      ],
+      "title": "StrictAuditTrail",
+      "type": "object"
+    },
+    "StrictOutputRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "enum": [
+            "CREATE",
+            "UPDATE",
+            "NO_CHANGE",
+            "PENDING_REVIEW"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "document_info": {
+          "$ref": "#/$defs/DocumentInfo"
+        },
+        "transaction_party": {
+          "$ref": "#/$defs/TransactionParty"
+        },
+        "charge_details": {
+          "$ref": "#/$defs/ChargeDetails"
+        },
+        "financial_attributes": {
+          "$ref": "#/$defs/FinancialAttributes"
+        },
+        "audit_trail": {
+          "$ref": "#/$defs/StrictAuditTrail"
+        }
+      },
+      "required": [
+        "operation",
+        "document_info",
+        "transaction_party",
+        "charge_details",
+        "financial_attributes",
+        "audit_trail"
+      ],
+      "title": "StrictOutputRecord",
+      "type": "object"
+    },
+    "TransactionParty": {
+      "additionalProperties": false,
+      "properties": {
+        "issuer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Issuer"
+        },
+        "recipient": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Recipient"
+        }
+      },
+      "title": "TransactionParty",
+      "type": "object"
+    }
+  },
+  "description": "Strict output matches the exam's standard output format exactly.",
+  "items": {
+    "$ref": "#/$defs/StrictOutputRecord"
+  },
+  "title": "StrictOutputDocument",
+  "type": "array"
+}

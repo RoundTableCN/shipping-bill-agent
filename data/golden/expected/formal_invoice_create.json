@@ -1,0 +1,827 @@
+[
+  {
+    "operation": "CREATE",
+    "document_info": {
+      "document_type": "Invoice",
+      "reference_no": "INV-FIXTURE-003",
+      "document_date": "2026-10-25"
+    },
+    "transaction_party": {
+      "issuer": "CARRIER ALPHA LIMITED",
+      "recipient": "IMPORTER BETA (SHANGHAI)"
+    },
+    "charge_details": {
+      "charge_item": "Handling Charge",
+      "amount": 100.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": "AP"
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Invoice (signal: INVOICE)",
+        "document_class=billing",
+        "billing_status=confirmed",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25",
+        "standardized 'HANDLING CHARGE' -> 'Handling Charge'",
+        "amount parsed from '100.00' -> 100.00",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "no historical bill matched; formal billing document",
+        "accounting_entity=IMPORTER BETA (SHANGHAI)",
+        "payer=IMPORTER BETA (SHANGHAI)",
+        "payee=CARRIER ALPHA LIMITED",
+        "issuer=CARRIER ALPHA LIMITED",
+        "recipient=IMPORTER BETA (SHANGHAI)",
+        "accounting entity is the explicit payer -> AP (confirmed)"
+      ],
+      "document_class": "billing",
+      "billing_status": "confirmed",
+      "billing_status_evidence": [
+        "matched INVOICE",
+        "formal billing document, no PROFORMA/DRAFT/VOID",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25"
+      ],
+      "original_charge_item": "HANDLING CHARGE",
+      "line_id": "646a16f5dffd",
+      "source_position_id": "646a16f5dffd",
+      "content_fingerprint": "5e3f608f9127",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 100.00,
+        "rate": 100.00
+      },
+      "candidate_amount": 100.00,
+      "document_totals": {
+        "subtotal": 290.00,
+        "tax": 0.00,
+        "total": 290.00
+      },
+      "letterhead_party": "CARRIER ALPHA LIMITED",
+      "issuer_candidate": [
+        "CARRIER ALPHA LIMITED"
+      ],
+      "issuer_status": "candidate",
+      "recipient_candidate": [
+        "IMPORTER BETA (SHANGHAI)"
+      ],
+      "recipient_status": "candidate",
+      "payer": "IMPORTER BETA (SHANGHAI)",
+      "payee": "CARRIER ALPHA LIMITED",
+      "beneficiary": "CARRIER ALPHA LIMITED",
+      "charge_direction": "to_us",
+      "candidate_posting_type": "AP",
+      "accounting_direction": "to_us",
+      "candidate_direction": "to_us",
+      "accounting_status": "CONFIRMED",
+      "collection_right": false,
+      "payment_obligation": true,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "reference_no": {
+          "raw": "INV-FIXTURE-003",
+          "normalized": "INV-FIXTURE-003"
+        },
+        "bl_no": {
+          "raw": "MAEU999888777",
+          "normalized": "MAEU999888777"
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": "MAEU999888777"
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": "CGT260999999"
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": "CGTSE260999999"
+        },
+        "container_nos": [
+          "TGHU1234567"
+        ],
+        "container_sources": {
+          "TGHU1234567": "document_text"
+        },
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "INVOICE DATE",
+            "raw": "2026-10-25",
+            "iso": "2026-10-25",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-25"
+            ]
+          },
+          {
+            "label": "DUE DATE",
+            "raw": "2026-11-24",
+            "iso": "2026-11-24",
+            "source": "LABELED",
+            "selected": false,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-11-24"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-25",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "HANDLING CHARGE",
+        "original_charge_name": "HANDLING CHARGE",
+        "standard_charge_name": "Handling Charge",
+        "candidate_standard_charge_name": "Handling Charge",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1.00",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "100.00",
+          "normalized": 100.00
+        },
+        "amount": {
+          "raw": "100.00",
+          "normalized": 100.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_DEFAULT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": "2026-11-24",
+        "prepaid_collect_raw": "P",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": "AP",
+        "accounting_direction": "to_us",
+        "candidate_direction": "to_us",
+        "accounting_status": "CONFIRMED",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "formal_invoice_create.pdf",
+        "file_id": "142984cde755",
+        "page": 0,
+        "bbox": [
+          50.0,
+          353.3999938964844,
+          544.4639892578125,
+          364.3919982910156
+        ],
+        "quote": "HANDLING CHARGE - 100.00 1.00 P 100.00",
+        "field_path": null
+      },
+      "raw_text_excerpt": "HANDLING CHARGE - 100.00 1.00 P 100.00",
+      "confidence": 0.9,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.95,
+      "arap_confidence": 0.9,
+      "decision_status": "AUTO",
+      "validation": {
+        "passed": true,
+        "errors": [],
+        "warnings": []
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": {
+        "CREATE": 3,
+        "UPDATE": 0,
+        "NO_CHANGE": 0,
+        "PENDING_REVIEW": 0
+      },
+      "history_checked": true,
+      "ocr_mode": "mock"
+    }
+  },
+  {
+    "operation": "CREATE",
+    "document_info": {
+      "document_type": "Invoice",
+      "reference_no": "INV-FIXTURE-003",
+      "document_date": "2026-10-25"
+    },
+    "transaction_party": {
+      "issuer": "CARRIER ALPHA LIMITED",
+      "recipient": "IMPORTER BETA (SHANGHAI)"
+    },
+    "charge_details": {
+      "charge_item": "Documentation Fee",
+      "amount": 40.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": "AP"
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Invoice (signal: INVOICE)",
+        "document_class=billing",
+        "billing_status=confirmed",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25",
+        "standardized 'DOCUMENTATION FEE' -> 'Documentation Fee'",
+        "amount parsed from '40.00' -> 40.00",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "no historical bill matched; formal billing document",
+        "accounting_entity=IMPORTER BETA (SHANGHAI)",
+        "payer=IMPORTER BETA (SHANGHAI)",
+        "payee=CARRIER ALPHA LIMITED",
+        "issuer=CARRIER ALPHA LIMITED",
+        "recipient=IMPORTER BETA (SHANGHAI)",
+        "accounting entity is the explicit payer -> AP (confirmed)"
+      ],
+      "document_class": "billing",
+      "billing_status": "confirmed",
+      "billing_status_evidence": [
+        "matched INVOICE",
+        "formal billing document, no PROFORMA/DRAFT/VOID",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25"
+      ],
+      "original_charge_item": "DOCUMENTATION FEE",
+      "line_id": "a15be5762a5b",
+      "source_position_id": "a15be5762a5b",
+      "content_fingerprint": "d9dc44338069",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 40.00,
+        "rate": 40.00
+      },
+      "candidate_amount": 40.00,
+      "document_totals": null,
+      "letterhead_party": "CARRIER ALPHA LIMITED",
+      "issuer_candidate": [
+        "CARRIER ALPHA LIMITED"
+      ],
+      "issuer_status": "candidate",
+      "recipient_candidate": [
+        "IMPORTER BETA (SHANGHAI)"
+      ],
+      "recipient_status": "candidate",
+      "payer": "IMPORTER BETA (SHANGHAI)",
+      "payee": "CARRIER ALPHA LIMITED",
+      "beneficiary": "CARRIER ALPHA LIMITED",
+      "charge_direction": "to_us",
+      "candidate_posting_type": "AP",
+      "accounting_direction": "to_us",
+      "candidate_direction": "to_us",
+      "accounting_status": "CONFIRMED",
+      "collection_right": false,
+      "payment_obligation": true,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "reference_no": {
+          "raw": "INV-FIXTURE-003",
+          "normalized": "INV-FIXTURE-003"
+        },
+        "bl_no": {
+          "raw": "MAEU999888777",
+          "normalized": "MAEU999888777"
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": "MAEU999888777"
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": "CGT260999999"
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": "CGTSE260999999"
+        },
+        "container_nos": [
+          "TGHU1234567"
+        ],
+        "container_sources": {
+          "TGHU1234567": "document_text"
+        },
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "INVOICE DATE",
+            "raw": "2026-10-25",
+            "iso": "2026-10-25",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-25"
+            ]
+          },
+          {
+            "label": "DUE DATE",
+            "raw": "2026-11-24",
+            "iso": "2026-11-24",
+            "source": "LABELED",
+            "selected": false,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-11-24"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-25",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "DOCUMENTATION FEE",
+        "original_charge_name": "DOCUMENTATION FEE",
+        "standard_charge_name": "Documentation Fee",
+        "candidate_standard_charge_name": "Documentation Fee",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1.00",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "40.00",
+          "normalized": 40.00
+        },
+        "amount": {
+          "raw": "40.00",
+          "normalized": 40.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_DEFAULT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": "2026-11-24",
+        "prepaid_collect_raw": "P",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": "AP",
+        "accounting_direction": "to_us",
+        "candidate_direction": "to_us",
+        "accounting_status": "CONFIRMED",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "formal_invoice_create.pdf",
+        "file_id": "142984cde755",
+        "page": 0,
+        "bbox": [
+          50.0,
+          371.3999938964844,
+          540.0159912109375,
+          382.3919982910156
+        ],
+        "quote": "DOCUMENTATION FEE - 40.00 1.00 P 40.00",
+        "field_path": null
+      },
+      "raw_text_excerpt": "DOCUMENTATION FEE - 40.00 1.00 P 40.00",
+      "confidence": 0.9,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.95,
+      "arap_confidence": 0.9,
+      "decision_status": "AUTO",
+      "validation": {
+        "passed": true,
+        "errors": [],
+        "warnings": []
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "mock"
+    }
+  },
+  {
+    "operation": "CREATE",
+    "document_info": {
+      "document_type": "Invoice",
+      "reference_no": "INV-FIXTURE-003",
+      "document_date": "2026-10-25"
+    },
+    "transaction_party": {
+      "issuer": "CARRIER ALPHA LIMITED",
+      "recipient": "IMPORTER BETA (SHANGHAI)"
+    },
+    "charge_details": {
+      "charge_item": "Trucking Charge",
+      "amount": 150.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": "AP"
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Invoice (signal: INVOICE)",
+        "document_class=billing",
+        "billing_status=confirmed",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25",
+        "standardized 'TRUCKING FEE' -> 'Trucking Charge'",
+        "amount parsed from '150.00' -> 150.00",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "no historical bill matched; formal billing document",
+        "accounting_entity=IMPORTER BETA (SHANGHAI)",
+        "payer=IMPORTER BETA (SHANGHAI)",
+        "payee=CARRIER ALPHA LIMITED",
+        "issuer=CARRIER ALPHA LIMITED",
+        "recipient=IMPORTER BETA (SHANGHAI)",
+        "accounting entity is the explicit payer -> AP (confirmed)"
+      ],
+      "document_class": "billing",
+      "billing_status": "confirmed",
+      "billing_status_evidence": [
+        "matched INVOICE",
+        "formal billing document, no PROFORMA/DRAFT/VOID",
+        "reference_no=INV-FIXTURE-003",
+        "document_date=2026-10-25"
+      ],
+      "original_charge_item": "TRUCKING FEE",
+      "line_id": "49b51789b02c",
+      "source_position_id": "49b51789b02c",
+      "content_fingerprint": "b43e5fab687b",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 150.00,
+        "rate": 150.00
+      },
+      "candidate_amount": 150.00,
+      "document_totals": null,
+      "letterhead_party": "CARRIER ALPHA LIMITED",
+      "issuer_candidate": [
+        "CARRIER ALPHA LIMITED"
+      ],
+      "issuer_status": "candidate",
+      "recipient_candidate": [
+        "IMPORTER BETA (SHANGHAI)"
+      ],
+      "recipient_status": "candidate",
+      "payer": "IMPORTER BETA (SHANGHAI)",
+      "payee": "CARRIER ALPHA LIMITED",
+      "beneficiary": "CARRIER ALPHA LIMITED",
+      "charge_direction": "to_us",
+      "candidate_posting_type": "AP",
+      "accounting_direction": "to_us",
+      "candidate_direction": "to_us",
+      "accounting_status": "CONFIRMED",
+      "collection_right": false,
+      "payment_obligation": true,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": "INV-FIXTURE-003"
+        },
+        "reference_no": {
+          "raw": "INV-FIXTURE-003",
+          "normalized": "INV-FIXTURE-003"
+        },
+        "bl_no": {
+          "raw": "MAEU999888777",
+          "normalized": "MAEU999888777"
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": "MAEU999888777"
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": "CGT260999999"
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": "CGTSE260999999"
+        },
+        "container_nos": [
+          "TGHU1234567"
+        ],
+        "container_sources": {
+          "TGHU1234567": "document_text"
+        },
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "INVOICE DATE",
+            "raw": "2026-10-25",
+            "iso": "2026-10-25",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-25"
+            ]
+          },
+          {
+            "label": "DUE DATE",
+            "raw": "2026-11-24",
+            "iso": "2026-11-24",
+            "source": "LABELED",
+            "selected": false,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-11-24"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-25",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "TRUCKING FEE",
+        "original_charge_name": "TRUCKING FEE",
+        "standard_charge_name": "Trucking Charge",
+        "candidate_standard_charge_name": "Trucking Charge",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1.00",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "150.00",
+          "normalized": 150.00
+        },
+        "amount": {
+          "raw": "150.00",
+          "normalized": 150.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_DEFAULT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": "2026-11-24",
+        "prepaid_collect_raw": "P",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": "AP",
+        "accounting_direction": "to_us",
+        "candidate_direction": "to_us",
+        "accounting_status": "CONFIRMED",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "formal_invoice_create.pdf",
+        "file_id": "142984cde755",
+        "page": 0,
+        "bbox": [
+          50.0,
+          389.3999938964844,
+          544.4639892578125,
+          400.3919982910156
+        ],
+        "quote": "TRUCKING FEE - 150.00 1.00 P 150.00",
+        "field_path": null
+      },
+      "raw_text_excerpt": "TRUCKING FEE - 150.00 1.00 P 150.00",
+      "confidence": 0.9,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.95,
+      "arap_confidence": 0.9,
+      "decision_status": "AUTO",
+      "validation": {
+        "passed": true,
+        "errors": [],
+        "warnings": []
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "mock"
+    }
+  }
+]

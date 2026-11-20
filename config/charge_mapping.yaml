@@ -1,0 +1,93 @@
+version: "2.0"
+mappings:
+  - standard: Handling Charge
+    aliases:
+      - HANDLING FEE
+      - H/D FEE
+      - H/C
+      - HANDLING CHARGE
+      - 操作费
+      - 操作手续费
+    alias_status:
+      H/C: CANDIDATE
+
+  - standard: Documentation Fee
+    aliases:
+      - DOC FEE
+      - DOCUMENT FEE
+      - DOCUMENTATION FEE
+      - 文件费
+      - 单证费
+
+  - standard: Terminal Handling Charge
+    aliases:
+      - THC
+      - OTHC
+      - DTHC
+      - TERMINAL HANDLING CHARGE
+      - 码头操作费
+
+  - standard: Trucking Charge
+    aliases:
+      - TRUCKING FEE
+      - TRUCKING CHARGE
+      - 拖车费
+
+  - standard: Customs Clearance Fee
+    aliases:
+      - CUSTOMS FEE
+      - CUSTOMS CLEARANCE FEE
+      - 报关费
+
+  - standard: Storage Charge
+    aliases:
+      - STORAGE FEE
+      - STORAGE CHARGE
+      - 仓储费
+
+  - standard: Detention Charge
+    aliases:
+      - DETENTION
+      - DETENTION CHARGE
+      - DMR
+      - 滞箱费
+
+  - standard: Demurrage Charge
+    aliases:
+      - DEMURRAGE
+      - DEMURRAGE CHARGE
+      - 滞港费
+
+  - standard: Detention Free Time Extension Charge
+    aliases:
+      - 4 ADD'L DETENTION FREE TIME CHARGE
+      - ADDITIONAL DETENTION FREE TIME CHARGE
+      - DETENTION FREE TIME EXTENSION CHARGE
+      - 滞箱免用时间延长费
+    alias_status:
+      "4 ADD'L DETENTION FREE TIME CHARGE": PENDING_CONFIRMATION
+      "ADDITIONAL DETENTION FREE TIME CHARGE": CANDIDATE
+
+  - standard: Ocean Freight
+    aliases:
+      - OCEAN FREIGHT
+      - FREIGHT
+      - 海运费
+
+  - standard: On Carriage Additional
+    status: CANDIDATE
+    aliases:
+      - OCA17
+      - ON CARRIAGE ADDITIONAL - US EM
+      - ON CARRIAGE ADDITIONAL
+      - 内陆转运附加费
+
+  - standard: Wharfage
+    aliases:
+      - WHARFAGE
+      - 码头费
+
+  - standard: Wharfage Administration Fee
+    aliases:
+      - WHARFAGE ADMINISTRATION FEE
+      - 码头管理费

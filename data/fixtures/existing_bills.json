@@ -1,0 +1,94 @@
+{
+  "format_version": "1.0",
+  "generated_at": "2026-11-05",
+  "bills": [
+    {
+      "bill_id": "BILL-FIX-001",
+      "reference_no": "INV-FIXTURE-001",
+      "bl_no": "MAEU888777666",
+      "booking_no": "CGTSE260888888",
+      "container_nos": [
+        "FIXU1234567",
+        "FIXU7654321"
+      ],
+      "document_date": "2026-10-25",
+      "parties": {
+        "issuer": "CARRIER ALPHA LIMITED",
+        "recipient": "IMPORTER BETA (SHANGHAI)"
+      },
+      "payer": "IMPORTER BETA (SHANGHAI)",
+      "payee": "CARRIER ALPHA LIMITED",
+      "beneficiary": "CARRIER ALPHA LIMITED",
+      "posting_type": "AP",
+      "currency": "USD",
+      "charges": [
+        {
+          "line_id": "BILL-FIX-001-L1",
+          "charge_item": "Handling Charge",
+          "amount": 65.0,
+          "currency": "USD",
+          "payment_term": "PP"
+        },
+        {
+          "line_id": "BILL-FIX-001-L2",
+          "charge_item": "Documentation Fee",
+          "amount": 35.0,
+          "currency": "USD",
+          "payment_term": "PP"
+        },
+        {
+          "line_id": "BILL-FIX-001-L3",
+          "charge_item": "Trucking Charge",
+          "amount": 120.0,
+          "currency": "USD",
+          "payment_term": "PP"
+        }
+      ],
+      "total": 220.0,
+      "raw": {
+        "source": "fixture",
+        "note": "Matches formal_invoice.pdf exactly (NO_CHANGE)."
+      }
+    },
+    {
+      "bill_id": "BILL-FIX-002",
+      "reference_no": "DC-FIXTURE-002",
+      "bl_no": "FIXUBL0000002",
+      "booking_no": "FIXUBK0000002",
+      "container_nos": [
+        "FIXU0000002"
+      ],
+      "document_date": "2026-10-20",
+      "parties": {
+        "issuer": "CARRIER ALPHA LIMITED",
+        "recipient": "IMPORTER BETA (SHANGHAI)"
+      },
+      "payer": "IMPORTER BETA (SHANGHAI)",
+      "payee": "CARRIER ALPHA LIMITED",
+      "beneficiary": "CARRIER ALPHA LIMITED",
+      "posting_type": "AP",
+      "currency": "USD",
+      "charges": [
+        {
+          "line_id": "BILL-FIX-002-L1",
+          "charge_item": "Handling Charge",
+          "amount": 35.0,
+          "currency": "USD",
+          "payment_term": "PP"
+        },
+        {
+          "line_id": "BILL-FIX-002-L2",
+          "charge_item": "Handling Charge",
+          "amount": 35.0,
+          "currency": "USD",
+          "payment_term": "PP"
+        }
+      ],
+      "total": 70.0,
+      "raw": {
+        "source": "fixture",
+        "note": "Two identical lines, used for one-to-one matching tests."
+      }
+    }
+  ]
+}

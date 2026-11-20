@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local secrets and runtime config
+.env
+.env.*
+!.env.example
+.run/
+
+# Generated artifacts
+out/
+dist/
+*.log
+*.zip
+.DS_Store
+Thumbs.db
+~$*
+
+# Source interview material and private analysis notes
+资料/
+_analysis/
+data/samples/
+data/fixtures/sample_prealert.eml
+data/golden/expected/.run/

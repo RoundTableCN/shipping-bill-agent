@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shipping-bill-agent"
+version = "0.1.0"
+description = "Multi-format shipping bill parsing agent (exam project)"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.7,<3",
+  "simplejson>=3.19",
+  "jsonschema>=4.20",
+  "python-docx>=1.1",
+  "olefile>=0.47",
+  "openpyxl>=3.1",
+  "xlrd>=2.0",
+  "beautifulsoup4>=4.12",
+  "PyYAML>=6.0",
+  "python-dotenv>=1.0",
+  "PyMuPDF>=1.24",
+  "Pillow>=10.0",
+  "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+llm = [
+  "langchain>=0.3",
+  "langchain-openai>=0.2",
+  "langchain-anthropic>=1.7",
+  "langgraph>=0.2",
+]
+ui = [
+  "streamlit>=1.35",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

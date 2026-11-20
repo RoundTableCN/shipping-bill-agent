@@ -1,0 +1,13 @@
+version: "1.0"
+
+# The entity whose books we are posting to.
+default: IMPORTER BETA (SHANGHAI)
+
+entities:
+  - name: IMPORTER BETA (SHANGHAI)
+    aliases:
+      - IMPORTER BETA
+      - IMPORTER BETA
+      - 示例进口商
+      - 示例进口商（上海）航运科技有限公司
+      - 示例进口商(上海)航运科技有限公司

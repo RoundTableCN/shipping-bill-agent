@@ -1,0 +1,1261 @@
+[
+  {
+    "operation": "PENDING_REVIEW",
+    "document_info": {
+      "document_type": "Statement",
+      "reference_no": "STMT-FIXTURE-001",
+      "document_date": "2026-10-26"
+    },
+    "transaction_party": {
+      "issuer": null,
+      "recipient": null
+    },
+    "charge_details": {
+      "charge_item": "Ocean Freight",
+      "amount": 1200.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": null
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Statement (signal: STATEMENT)",
+        "document_class=notice",
+        "billing_status=tentative",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26",
+        "issuer is not explicit on the document",
+        "standardized '海运费' -> 'Ocean Freight'",
+        "amount parsed from '1200' -> 1200",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "Statement summarizes existing bills; CREATE/UPDATE not allowed",
+        "not a confirmed billing document; no AR/AP posting"
+      ],
+      "document_class": "notice",
+      "billing_status": "tentative",
+      "billing_status_evidence": [
+        "matched STATEMENT",
+        "notice/tentative document",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26"
+      ],
+      "original_charge_item": "海运费",
+      "line_id": "4e50d4803570",
+      "source_position_id": "4e50d4803570",
+      "content_fingerprint": "f6f454d0c9c1",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 1200.00,
+        "rate": 1200.00
+      },
+      "candidate_amount": 1200.00,
+      "document_totals": {
+        "subtotal": null,
+        "tax": null,
+        "total": null
+      },
+      "letterhead_party": null,
+      "issuer_candidate": [],
+      "issuer_status": null,
+      "recipient_candidate": [],
+      "recipient_status": null,
+      "payer": null,
+      "payee": null,
+      "beneficiary": null,
+      "charge_direction": "ambiguous",
+      "candidate_posting_type": null,
+      "accounting_direction": null,
+      "candidate_direction": null,
+      "accounting_status": "PENDING_CONFIRMATION",
+      "collection_right": null,
+      "payment_obligation": null,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": null
+        },
+        "reference_no": {
+          "raw": "STMT-FIXTURE-001",
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "bl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "container_nos": [],
+        "container_sources": {},
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "STATEMENT DATE",
+            "raw": "2026-10-26",
+            "iso": "2026-10-26",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-26"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-26",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "海运费",
+        "original_charge_name": "海运费",
+        "standard_charge_name": "Ocean Freight",
+        "candidate_standard_charge_name": "Ocean Freight",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "1200",
+          "normalized": 1200.00
+        },
+        "amount": {
+          "raw": "1200",
+          "normalized": 1200.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_TEXT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": null,
+        "prepaid_collect_raw": "PP",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": null,
+        "accounting_direction": null,
+        "candidate_direction": null,
+        "accounting_status": "PENDING_CONFIRMATION",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "charges.xlsx",
+        "file_id": "5a9dd9109652",
+        "page": null,
+        "bbox": null,
+        "quote": "1 海运费 1x40HQ 1 1200 USD 1200 PP Ocean Freight",
+        "field_path": null
+      },
+      "raw_text_excerpt": "1 海运费 1x40HQ 1 1200 USD 1200 PP Ocean Freight",
+      "confidence": 0.85,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.85,
+      "arap_confidence": 0.0,
+      "decision_status": "REVIEW",
+      "validation": {
+        "passed": false,
+        "errors": [
+          "E_DOC_STATEMENT_NOT_POSTABLE"
+        ],
+        "warnings": [
+          "W_DOCUMENT_NOT_CONFIRMED: billing_status=tentative",
+          "W_MULTIPLE_TOTAL_VALUES: 1420, 80",
+          "W_MULTI_CURRENCY_TOTAL: total left as null"
+        ]
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": {
+        "CREATE": 0,
+        "UPDATE": 0,
+        "NO_CHANGE": 0,
+        "PENDING_REVIEW": 5
+      },
+      "history_checked": true,
+      "ocr_mode": "not_applicable"
+    }
+  },
+  {
+    "operation": "PENDING_REVIEW",
+    "document_info": {
+      "document_type": "Statement",
+      "reference_no": "STMT-FIXTURE-001",
+      "document_date": "2026-10-26"
+    },
+    "transaction_party": {
+      "issuer": null,
+      "recipient": null
+    },
+    "charge_details": {
+      "charge_item": "Handling Charge",
+      "amount": 65.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": null
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Statement (signal: STATEMENT)",
+        "document_class=notice",
+        "billing_status=tentative",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26",
+        "issuer is not explicit on the document",
+        "standardized '操作费' -> 'Handling Charge'",
+        "amount parsed from '65' -> 65",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "Statement summarizes existing bills; CREATE/UPDATE not allowed",
+        "not a confirmed billing document; no AR/AP posting"
+      ],
+      "document_class": "notice",
+      "billing_status": "tentative",
+      "billing_status_evidence": [
+        "matched STATEMENT",
+        "notice/tentative document",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26"
+      ],
+      "original_charge_item": "操作费",
+      "line_id": "48cc974f30d5",
+      "source_position_id": "48cc974f30d5",
+      "content_fingerprint": "26eb87da0849",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 65.00,
+        "rate": 65.00
+      },
+      "candidate_amount": 65.00,
+      "document_totals": null,
+      "letterhead_party": null,
+      "issuer_candidate": [],
+      "issuer_status": null,
+      "recipient_candidate": [],
+      "recipient_status": null,
+      "payer": null,
+      "payee": null,
+      "beneficiary": null,
+      "charge_direction": "ambiguous",
+      "candidate_posting_type": null,
+      "accounting_direction": null,
+      "candidate_direction": null,
+      "accounting_status": "PENDING_CONFIRMATION",
+      "collection_right": null,
+      "payment_obligation": null,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": null
+        },
+        "reference_no": {
+          "raw": "STMT-FIXTURE-001",
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "bl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "container_nos": [],
+        "container_sources": {},
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "STATEMENT DATE",
+            "raw": "2026-10-26",
+            "iso": "2026-10-26",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-26"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-26",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "操作费",
+        "original_charge_name": "操作费",
+        "standard_charge_name": "Handling Charge",
+        "candidate_standard_charge_name": "Handling Charge",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "65",
+          "normalized": 65.00
+        },
+        "amount": {
+          "raw": "65",
+          "normalized": 65.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_TEXT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": null,
+        "prepaid_collect_raw": "PP",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": null,
+        "accounting_direction": null,
+        "candidate_direction": null,
+        "accounting_status": "PENDING_CONFIRMATION",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "charges.xlsx",
+        "file_id": "5a9dd9109652",
+        "page": null,
+        "bbox": null,
+        "quote": "2 操作费 - 1 65 USD 65 PP Handling Charge",
+        "field_path": null
+      },
+      "raw_text_excerpt": "2 操作费 - 1 65 USD 65 PP Handling Charge",
+      "confidence": 0.85,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.85,
+      "arap_confidence": 0.0,
+      "decision_status": "REVIEW",
+      "validation": {
+        "passed": false,
+        "errors": [
+          "E_DOC_STATEMENT_NOT_POSTABLE"
+        ],
+        "warnings": [
+          "W_DOCUMENT_NOT_CONFIRMED: billing_status=tentative",
+          "W_MULTIPLE_TOTAL_VALUES: 1420, 80",
+          "W_MULTI_CURRENCY_TOTAL: total left as null"
+        ]
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "not_applicable"
+    }
+  },
+  {
+    "operation": "PENDING_REVIEW",
+    "document_info": {
+      "document_type": "Statement",
+      "reference_no": "STMT-FIXTURE-001",
+      "document_date": "2026-10-26"
+    },
+    "transaction_party": {
+      "issuer": null,
+      "recipient": null
+    },
+    "charge_details": {
+      "charge_item": "Documentation Fee",
+      "amount": 35.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": null
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Statement (signal: STATEMENT)",
+        "document_class=notice",
+        "billing_status=tentative",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26",
+        "issuer is not explicit on the document",
+        "standardized '文件费' -> 'Documentation Fee'",
+        "amount parsed from '35' -> 35",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "Statement summarizes existing bills; CREATE/UPDATE not allowed",
+        "not a confirmed billing document; no AR/AP posting"
+      ],
+      "document_class": "notice",
+      "billing_status": "tentative",
+      "billing_status_evidence": [
+        "matched STATEMENT",
+        "notice/tentative document",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26"
+      ],
+      "original_charge_item": "文件费",
+      "line_id": "6446ff0556c5",
+      "source_position_id": "6446ff0556c5",
+      "content_fingerprint": "550365263522",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 35.00,
+        "rate": 35.00
+      },
+      "candidate_amount": 35.00,
+      "document_totals": null,
+      "letterhead_party": null,
+      "issuer_candidate": [],
+      "issuer_status": null,
+      "recipient_candidate": [],
+      "recipient_status": null,
+      "payer": null,
+      "payee": null,
+      "beneficiary": null,
+      "charge_direction": "ambiguous",
+      "candidate_posting_type": null,
+      "accounting_direction": null,
+      "candidate_direction": null,
+      "accounting_status": "PENDING_CONFIRMATION",
+      "collection_right": null,
+      "payment_obligation": null,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": null
+        },
+        "reference_no": {
+          "raw": "STMT-FIXTURE-001",
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "bl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "container_nos": [],
+        "container_sources": {},
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "STATEMENT DATE",
+            "raw": "2026-10-26",
+            "iso": "2026-10-26",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-26"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-26",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "文件费",
+        "original_charge_name": "文件费",
+        "standard_charge_name": "Documentation Fee",
+        "candidate_standard_charge_name": "Documentation Fee",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "35",
+          "normalized": 35.00
+        },
+        "amount": {
+          "raw": "35",
+          "normalized": 35.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_TEXT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": null,
+        "prepaid_collect_raw": "PP",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": null,
+        "accounting_direction": null,
+        "candidate_direction": null,
+        "accounting_status": "PENDING_CONFIRMATION",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "charges.xlsx",
+        "file_id": "5a9dd9109652",
+        "page": null,
+        "bbox": null,
+        "quote": "3 文件费 - 1 35 USD 35 PP Documentation Fee",
+        "field_path": null
+      },
+      "raw_text_excerpt": "3 文件费 - 1 35 USD 35 PP Documentation Fee",
+      "confidence": 0.85,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.85,
+      "arap_confidence": 0.0,
+      "decision_status": "REVIEW",
+      "validation": {
+        "passed": false,
+        "errors": [
+          "E_DOC_STATEMENT_NOT_POSTABLE"
+        ],
+        "warnings": [
+          "W_DOCUMENT_NOT_CONFIRMED: billing_status=tentative",
+          "W_MULTIPLE_TOTAL_VALUES: 1420, 80",
+          "W_MULTI_CURRENCY_TOTAL: total left as null"
+        ]
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "not_applicable"
+    }
+  },
+  {
+    "operation": "PENDING_REVIEW",
+    "document_info": {
+      "document_type": "Statement",
+      "reference_no": "STMT-FIXTURE-001",
+      "document_date": "2026-10-26"
+    },
+    "transaction_party": {
+      "issuer": null,
+      "recipient": null
+    },
+    "charge_details": {
+      "charge_item": "Trucking Charge",
+      "amount": 120.00,
+      "currency": "USD",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": null
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Statement (signal: STATEMENT)",
+        "document_class=notice",
+        "billing_status=tentative",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26",
+        "issuer is not explicit on the document",
+        "standardized '拖车费' -> 'Trucking Charge'",
+        "amount parsed from '120' -> 120",
+        "currency=USD",
+        "evidence found in source text",
+        "no matching bill",
+        "Statement summarizes existing bills; CREATE/UPDATE not allowed",
+        "not a confirmed billing document; no AR/AP posting"
+      ],
+      "document_class": "notice",
+      "billing_status": "tentative",
+      "billing_status_evidence": [
+        "matched STATEMENT",
+        "notice/tentative document",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26"
+      ],
+      "original_charge_item": "拖车费",
+      "line_id": "0cbcbae3b6d1",
+      "source_position_id": "0cbcbae3b6d1",
+      "content_fingerprint": "721577dd319c",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 120.00,
+        "rate": 120.00
+      },
+      "candidate_amount": 120.00,
+      "document_totals": null,
+      "letterhead_party": null,
+      "issuer_candidate": [],
+      "issuer_status": null,
+      "recipient_candidate": [],
+      "recipient_status": null,
+      "payer": null,
+      "payee": null,
+      "beneficiary": null,
+      "charge_direction": "ambiguous",
+      "candidate_posting_type": null,
+      "accounting_direction": null,
+      "candidate_direction": null,
+      "accounting_status": "PENDING_CONFIRMATION",
+      "collection_right": null,
+      "payment_obligation": null,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": null
+        },
+        "reference_no": {
+          "raw": "STMT-FIXTURE-001",
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "bl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "container_nos": [],
+        "container_sources": {},
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "STATEMENT DATE",
+            "raw": "2026-10-26",
+            "iso": "2026-10-26",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-26"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-26",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "拖车费",
+        "original_charge_name": "拖车费",
+        "standard_charge_name": "Trucking Charge",
+        "candidate_standard_charge_name": "Trucking Charge",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "120",
+          "normalized": 120.00
+        },
+        "amount": {
+          "raw": "120",
+          "normalized": 120.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "USD",
+          "normalized": "USD"
+        },
+        "currency_source": "DOCUMENT_TEXT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": null,
+        "prepaid_collect_raw": "PP",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": null,
+        "accounting_direction": null,
+        "candidate_direction": null,
+        "accounting_status": "PENDING_CONFIRMATION",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "charges.xlsx",
+        "file_id": "5a9dd9109652",
+        "page": null,
+        "bbox": null,
+        "quote": "4 拖车费 - 1 120 USD 120 PP Trucking Charge",
+        "field_path": null
+      },
+      "raw_text_excerpt": "4 拖车费 - 1 120 USD 120 PP Trucking Charge",
+      "confidence": 0.85,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.85,
+      "arap_confidence": 0.0,
+      "decision_status": "REVIEW",
+      "validation": {
+        "passed": false,
+        "errors": [
+          "E_DOC_STATEMENT_NOT_POSTABLE"
+        ],
+        "warnings": [
+          "W_DOCUMENT_NOT_CONFIRMED: billing_status=tentative",
+          "W_MULTIPLE_TOTAL_VALUES: 1420, 80",
+          "W_MULTI_CURRENCY_TOTAL: total left as null"
+        ]
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "not_applicable"
+    }
+  },
+  {
+    "operation": "PENDING_REVIEW",
+    "document_info": {
+      "document_type": "Statement",
+      "reference_no": "STMT-FIXTURE-001",
+      "document_date": "2026-10-26"
+    },
+    "transaction_party": {
+      "issuer": null,
+      "recipient": null
+    },
+    "charge_details": {
+      "charge_item": "Customs Clearance Fee",
+      "amount": 80.00,
+      "currency": "CNY",
+      "payment_term": "PP"
+    },
+    "financial_attributes": {
+      "accounting_entity": "IMPORTER BETA (SHANGHAI)",
+      "posting_type": null
+    },
+    "audit_trail": {
+      "ai_reasoning": [
+        "document_type=Statement (signal: STATEMENT)",
+        "document_class=notice",
+        "billing_status=tentative",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26",
+        "issuer is not explicit on the document",
+        "standardized '报关费' -> 'Customs Clearance Fee'",
+        "amount parsed from '80' -> 80",
+        "currency=CNY",
+        "evidence found in source text",
+        "no matching bill",
+        "Statement summarizes existing bills; CREATE/UPDATE not allowed",
+        "not a confirmed billing document; no AR/AP posting"
+      ],
+      "document_class": "notice",
+      "billing_status": "tentative",
+      "billing_status_evidence": [
+        "matched STATEMENT",
+        "notice/tentative document",
+        "reference_no=STMT-FIXTURE-001",
+        "document_date=2026-10-26"
+      ],
+      "original_charge_item": "报关费",
+      "line_id": "dda8fdd79342",
+      "source_position_id": "dda8fdd79342",
+      "content_fingerprint": "83293f3cc28f",
+      "historical_line_id": null,
+      "charge_breakdown": {
+        "quantity": 1.00,
+        "unit_price": 80.00,
+        "rate": 80.00
+      },
+      "candidate_amount": 80.00,
+      "document_totals": null,
+      "letterhead_party": null,
+      "issuer_candidate": [],
+      "issuer_status": null,
+      "recipient_candidate": [],
+      "recipient_status": null,
+      "payer": null,
+      "payee": null,
+      "beneficiary": null,
+      "charge_direction": "ambiguous",
+      "candidate_posting_type": null,
+      "accounting_direction": null,
+      "candidate_direction": null,
+      "accounting_status": "PENDING_CONFIRMATION",
+      "collection_right": null,
+      "payment_obligation": null,
+      "document_identity": {
+        "document_number": {
+          "raw": null,
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "invoice_number": {
+          "raw": null,
+          "normalized": null
+        },
+        "reference_no": {
+          "raw": "STMT-FIXTURE-001",
+          "normalized": "STMT-FIXTURE-001"
+        },
+        "bl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "mbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "hbl_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "waybill_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "booking_no": {
+          "raw": null,
+          "normalized": null
+        },
+        "container_nos": [],
+        "container_sources": {},
+        "seal_nos": [],
+        "date_candidates": [
+          {
+            "label": "STATEMENT DATE",
+            "raw": "2026-10-26",
+            "iso": "2026-10-26",
+            "source": "LABELED",
+            "selected": true,
+            "status": "CONFIRMED",
+            "candidates": [
+              "2026-10-26"
+            ]
+          }
+        ],
+        "document_date_raw": "2026-10-26",
+        "document_date_status": "CONFIRMED"
+      },
+      "charge_values": {
+        "charge_code_raw": null,
+        "charge_name_raw": "报关费",
+        "original_charge_name": "报关费",
+        "standard_charge_name": "Customs Clearance Fee",
+        "candidate_standard_charge_name": "Customs Clearance Fee",
+        "mapping_status": "MATCHED",
+        "quantity": {
+          "raw": "1",
+          "normalized": 1.00
+        },
+        "rate": {
+          "raw": "80",
+          "normalized": 80.00
+        },
+        "amount": {
+          "raw": "80",
+          "normalized": 80.00
+        },
+        "roe": {
+          "raw": null,
+          "normalized": null
+        },
+        "base": null,
+        "base_review_required": false,
+        "settlement_amount": {
+          "raw": null,
+          "normalized": null
+        },
+        "settlement_currency": null,
+        "currency": {
+          "raw": "CNY",
+          "normalized": "CNY"
+        },
+        "currency_source": "DOCUMENT_TEXT",
+        "payment_term": {
+          "raw": "PP",
+          "normalized": "PP"
+        },
+        "payment_due_instruction": null,
+        "payment_due_date": null,
+        "prepaid_collect_raw": "PP",
+        "prepaid_collect_normalized": "PREPAID",
+        "prepaid_collect_status": "CONFIRMED",
+        "payer_code_raw": null,
+        "payee_code_raw": null,
+        "party_mapping_status": null,
+        "charge_type": null
+      },
+      "status": {
+        "operation_status": "PROVISIONAL",
+        "candidate_posting_type": null,
+        "accounting_direction": null,
+        "candidate_direction": null,
+        "accounting_status": "PENDING_CONFIRMATION",
+        "payment_status": "UNKNOWN",
+        "payment_received": null,
+        "payment_status_scope": "UNKNOWN",
+        "release_type": "UNKNOWN",
+        "release_status": "UNKNOWN",
+        "shipment_operation_status": "UNKNOWN",
+        "business_instructions": []
+      },
+      "source": {
+        "file": "charges.xlsx",
+        "file_id": "5a9dd9109652",
+        "page": null,
+        "bbox": null,
+        "quote": "5 报关费 - 1 80 CNY 80 PP Customs Clearance Fee",
+        "field_path": null
+      },
+      "raw_text_excerpt": "5 报关费 - 1 80 CNY 80 PP Customs Clearance Fee",
+      "confidence": 0.85,
+      "extraction_confidence": 0.9,
+      "document_confidence": 0.85,
+      "arap_confidence": 0.0,
+      "decision_status": "REVIEW",
+      "validation": {
+        "passed": false,
+        "errors": [
+          "E_DOC_STATEMENT_NOT_POSTABLE"
+        ],
+        "warnings": [
+          "W_DOCUMENT_NOT_CONFIRMED: billing_status=tentative",
+          "W_MULTIPLE_TOTAL_VALUES: 1420, 80",
+          "W_MULTI_CURRENCY_TOTAL: total left as null"
+        ]
+      },
+      "matched_bill_id": null,
+      "match_rule": null,
+      "match_candidates": [],
+      "strict_attempts": [
+        {
+          "rule": "STRICT_L1",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L2",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L3",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        },
+        {
+          "rule": "STRICT_L4",
+          "matched": false,
+          "candidate_count": 0,
+          "note": null
+        }
+      ],
+      "enhanced_attempts": null,
+      "changes": [],
+      "inherited_fields": [],
+      "amount_changed": false,
+      "document_operation_summary": null,
+      "history_checked": true,
+      "ocr_mode": "not_applicable"
+    }
+  }
+]
